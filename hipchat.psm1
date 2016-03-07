@@ -1,27 +1,37 @@
 ﻿#Requires -Version 3.0
 
+<#
+    .PARAMETER  message
+     Required. The message body. 10,000 characters max.
+
+    .PARAMETER  color
+     The background colour of the HipChat message. One of "yellow", "red", "green", "purple", "gray", or "random". (default: gray)
+
+    .PARAMETER  notify
+     Set whether or not this message should trigger a notification for people in the room. (default: false)
+
+    .PARAMETER  apitoken
+     Required. This must be a HipChat API token created by a Room Admin for the room you are sending notifications to (default: API key for Test room).
+
+    .PARAMETER  room
+     Required. The id or URL encoded name of the HipChat room you want to send the message to (default: Test).
+
+    .PARAMETER  retry
+     The number of times to retry sending the message (default: 1)
+
+    .PARAMETER  retrysecs
+     The number of seconds to wait between tries (default: 30)
+#>
+
 function Send-Hipchat {
 
     Param(
-        # Required. The message body. 10,000 characters max.
         [Parameter(Mandatory = $True)][string]$message,
-        
-        # The background colour of the HipChat message. One of "yellow", "red", "green", "purple", "gray", or "random". (default: gray)
         [ValidateSet('yellow', 'green', 'red', 'purple', 'gray','random')][string]$color = 'gray',
-        
-        # Set whether or not this message should trigger a notification for people in the room. (default: false)
         [switch]$notify,
-        
-        # Required. This must be a HipChat API token created by a Room Admin for the room you are sending notifications to (default: API key for Test room).
         [Parameter(Mandatory = $True)][string]$apitoken,   
-        
-        # Required. The id or URL encoded name of the HipChat room you want to send the message to (default: Test).
         [Parameter(Mandatory = $True)][string]$room,
-        
-        # The number of times to try sending the message (default: 1)
-        [int]$tries = 1,
-        
-        # The number of seconds to wait between tries (default: 30)
+        [int]$retry = 1,
         [int]$retrysecs = 30
     )
 
@@ -43,7 +53,7 @@ function Send-Hipchat {
     $Retrycount = 1
     $Result = $null
  
-    While (!$Result -and $RetryCount -le $tries){
+    While (!$Result -and $RetryCount -le $retry){
         $Retrycount++
 
 	    try {

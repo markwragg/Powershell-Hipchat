@@ -1,2 +1,2 @@
 # PSHipchat
-(Powershell commands for Hipchat
+Powershell commands for Hipchat

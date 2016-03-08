@@ -1,6 +1,8 @@
 # Powershell Commands for HipChat
 A module for Powershell with functions for interacting with the team chat tool "Hipchat" by Atlassian. The module utilises Hipchat API v2: https://www.hipchat.com/docs/apiv2.
+
 > This script requires Powershell v3.0 or above.
+
 ## Functions
 The following functions are available:
 #### 1. Send-hipchat

@@ -5,8 +5,12 @@ A module for Powershell with functions for interacting with the team chat tool "
 
 ## Functions
 The following functions are available:
+
 #### 1. Send-hipchat
-For sending notifications into a room. Before you can use this you need to create an API v2 token for the room that you want to send notifications to. To do this:
+For sending notifications into a room. Before you can use this you need to create an API v2 token for the room that you want to send notifications to. 
+
+To do this:
+
 1. Go to https://yourdomain.hipchat.com/admin/rooms/ and select the room you wish to notify.
 2. Go to Tokens.
 3. Create a Send Notification token. Note the "Label" you define will be included with the notification.

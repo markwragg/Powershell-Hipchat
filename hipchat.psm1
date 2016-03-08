@@ -5,7 +5,7 @@
      Required. The message body. 10,000 characters max.
 
     .PARAMETER  color
-     The background colour of the HipChat message. One of "yellow", "red", "green", "purple", "gray", or "random". (default: gray)
+     The background colour of the HipChat message. One of "yellow", "green", "red", "purple", "gray", or "random". (default: gray)
 
     .PARAMETER  notify
      Set whether or not this message should trigger a notification for people in the room. (default: false)
@@ -17,7 +17,7 @@
      Required. The id or URL encoded name of the HipChat room you want to send the message to (default: Test).
 
     .PARAMETER  retry
-     The number of times to retry sending the message (default: 1)
+     The number of times to retry sending the message (default: 0)
 
     .PARAMETER  retrysecs
      The number of seconds to wait between tries (default: 30)
@@ -31,7 +31,7 @@ function Send-Hipchat {
         [switch]$notify,
         [Parameter(Mandatory = $True)][string]$apitoken,   
         [Parameter(Mandatory = $True)][string]$room,
-        [int]$retry = 1,
+        [int]$retry = 0,
         [int]$retrysecs = 30
     )
 
@@ -49,32 +49,35 @@ function Send-Hipchat {
     $uri = "https://api.hipchat.com/v2/room/$room/notification"    
     $body = ConvertTo-Json $messageObj
 
-    $Stoploop = $false
-    $Retrycount = 1
+    $Retrycount = 0
     $Result = $null
  
-    While (!$Result -and $RetryCount -le $retry){
-        $Retrycount++
-
-	    try {
-		    $Result = Invoke-WebRequest -Method Post -Uri $uri -Body $body -Headers $authObj -ErrorAction SilentlyContinue -TimeoutSec 1
+    
+    While(!$Result -and $RetryCount -le $retry){
+	    $Retrycount++
+        try {
+		    $Result = Invoke-WebRequest -Method Post -Uri $uri -Body $body -Headers $authObj -ErrorAction SilentlyContinue
 		    Write-Verbose "'$message' sent"
 		    Return $true
 		    }
 	    catch {
-
             $errormessage = $_
-            Write-Verbose "Could not send message retrying in $retrysecs seconds..."
-		    Start-Sleep -Seconds $retrysecs
+            Write-Verbose "Could not send message. $($_.Exception.message)"
+		    
+            If ($retrycount -lt $retry){
+                Write-Verbose "retrying in $retrysecs seconds..."
+                Start-Sleep -Seconds $retrysecs
+            }
 	    }
     }
-
+    
+    #Report any errors
     If ($errormessage.ErrorDetails.Message -ne $null){
         Write-Error ($errormessage.ErrorDetails.Message | convertfrom-json).error.message
     }Else{
-        Write-Verbose "Could not send after $retry retries. I quit."
+        Write-Verbose "Could not send after $Retrycount tries. I quit."
 		Write-Error $errormessage.Exception.message
-	}
+    } 
 
     Return $false
 }

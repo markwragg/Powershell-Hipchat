@@ -25,6 +25,7 @@
 
 function Send-Hipchat {
 
+    [CmdletBinding()]
     Param(
         [Parameter(Mandatory = $True)][string]$message,
         [ValidateSet('yellow', 'green', 'red', 'purple', 'gray','random')][string]$color = 'gray',

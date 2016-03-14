@@ -5,15 +5,14 @@ import-module "$here\$sut" -force
 
 Describe "send-hipchat" {
 
-    Mock Invoke-WebRequest -ModuleName "hipchat" {Import-Clixml "$here\hipchat.send-hipchat.invoke-webrequest.xml"}
-
+    Mock Invoke-WebRequest -ModuleName "hipchat" {Import-Clixml "hipchat.send-hipchat.invoke-webrequest.xml"}
+    
     It "should return true" {
 
         $params = @{
             message = "Pester test message"
             room = "Test"
-            #apitoken = "c6cS2qXSv1zRyUUXpPsu3bebVF43wx8bvPQK5vg6"
-            apitoken = "blah"
+            apitoken = "c6cS2qXSv1zRyUUXpPsu3bebVF43wx8bvPQK5vg6"
         }
 
         send-hipchat @params | Should Be $true
@@ -43,8 +42,7 @@ Describe "send-hipchat timeouts" {
         $params = @{
             message = "Pester test message"
             room = "Test"
-            #apitoken = "c6cS2qXSv1zRyUUXpPsu3bebVF43wx8bvPQK5vg6"
-            apitoken = "blah"
+            apitoken = "fakefalsetoken"
             retry = 3
             retrysecs = 1
             ErrorAction = "SilentlyContinue"
@@ -52,6 +50,7 @@ Describe "send-hipchat timeouts" {
 
         send-hipchat @params | Should be $false
         Assert-MockCalled Invoke-WebRequest -Exactly 4 -ModuleName "hipchat" -Scope It
+        
     }
 
 }

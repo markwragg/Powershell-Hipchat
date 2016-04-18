@@ -24,5 +24,3 @@ send-hipchat -message "my message" -room "My%20Room" -apitoken a1b2c3d4e5f6a1b2c
 ```
 ## Acknowledgements
 Thanks to **Sam Martin** for his support during the development of this tool. Check out his contributions here: https://github.com/Sam-Martin and his blog here https://sammart.in/.
-
-..

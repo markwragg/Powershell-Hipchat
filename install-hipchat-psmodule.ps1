@@ -1,7 +1,7 @@
 <#
  Creation Date:    10/2/2016 10:30 PM EST
 
- Author:           Marcus Bastian (ByteEater@GitLab)
+ Author:           Marcus Bastian (BastianM3@GitHub)
 
  Script Name:      install-hipchat-psmodule.ps1
 

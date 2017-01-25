@@ -76,7 +76,7 @@ function Send-Hipchat {
                 $Response = $Request.GetResponse()
 
                 $stream = New-Object IO.StreamReader($Response.GetResponseStream(), $Response.ContentEncoding)
-                $content = $stream.ReadToEnd()
+                $stream.ReadToEnd() | Out-Null
                 $stream.Close()
                 $Response.Close()
             }

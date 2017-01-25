@@ -1,5 +1,5 @@
 #Environment configuration. You only need to set version if you need to exceed an existing version # in PS Gallery
-version: 1.4.{build}
+version: 1.0.{build}
 os: WMF 5
 
 install:

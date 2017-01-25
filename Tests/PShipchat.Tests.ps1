@@ -1,13 +1,12 @@
-$moduleName = 'Hipchat'
+$moduleName = 'PSHipchat'
 $projectRoot = Resolve-Path "$PSScriptRoot\.."
 $moduleRoot = Split-Path (Resolve-Path "$projectRoot\$moduleName\$moduleName.psm1")
 
-Import-Module "$(Resolve-Path "$projectRoot\$moduleName\$moduleName.psm1")"
-
+Import-Module "$moduleRoot\$moduleName.psm1"
 
 Describe "send-hipchat" {
 
-    Mock Invoke-WebRequest -ModuleName "hipchat" {Import-Clixml "hipchat.send-hipchat.invoke-webrequest.xml"}
+    Mock Invoke-WebRequest -ModuleName $moduleName { Import-Clixml "$pwd\Tests\PSHipchat.send-hipchat.invoke-webrequest.xml" }
     
     It "should return true" {
 
@@ -25,8 +24,7 @@ Describe "send-hipchat" {
         $params = @{
             message = "Pester test message"
             room = "Test"
-            #apitoken = "c6cS2qXSv1zRyUUXpPsu3bebVF43wx8bvPQK5vg6"
-            apitoken = "blah"
+            apitoken = "fakefalsetoken"
             color = "blue"
         }
 
@@ -37,7 +35,7 @@ Describe "send-hipchat" {
 
 Describe "send-hipchat timeouts" {
     
-    Mock Invoke-WebRequest -ModuleName "hipchat" {Throw}
+    Mock Invoke-WebRequest -ModuleName $moduleName {Throw}
 
     It "should retry 3 additional times" {
 
@@ -51,7 +49,7 @@ Describe "send-hipchat timeouts" {
         }
 
         send-hipchat @params | Should be $false
-        Assert-MockCalled Invoke-WebRequest -Exactly 4 -ModuleName "hipchat" -Scope It
+        Assert-MockCalled Invoke-WebRequest -Exactly 4 -ModuleName $moduleName -Scope It
         
     }
 

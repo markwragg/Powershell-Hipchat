@@ -18,13 +18,13 @@ ModuleVersion = '1.0'
 GUID = 'f1088607-3a89-4115-97f1-4211d00842af'
 
 # Author of this module
-Author = 'mwragg'
+Author = 'Mark Wragg'
 
 # Company or vendor of this module
-CompanyName = 'None'
+CompanyName = 'http://wragg.io'
 
 # Copyright statement for this module
-Copyright = '(c) 2016 mwragg. All rights reserved.'
+Copyright = '(c) 2016 Mark Wragg. All rights reserved.'
 
 # Description of the functionality provided by this module
 # Description = 'Send notifications to Hipchat room via API v2'
@@ -98,13 +98,13 @@ PrivateData = @{
         # LicenseUri = ''
 
         # A URL to the main website for this project.
-        # ProjectUri = ''
+        ProjectUri = 'https://github.com/markwragg/Powershell-Hipchat'
 
         # A URL to an icon representing this module.
         # IconUri = ''
 
         # ReleaseNotes of this module
-        # ReleaseNotes = ''
+        ReleaseNotes = 'https://github.com/markwragg/Powershell-Hipchat/blob/master/README.md'
 
     } # End of PSData hashtable
 

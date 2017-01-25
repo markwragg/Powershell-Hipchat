@@ -1,4 +1,4 @@
-﻿#Requires -Version 2.0
+#Requires -Version 2.0
 
 <#
     .PARAMETER  message
@@ -37,7 +37,8 @@ if ($PSVersionTable.PSVersion.Major -lt 3 ){
 function Send-Hipchat {
 
     [CmdletBinding()]
-    Param(
+    [OutputType([Boolean])]
+	Param(
         [Parameter(Mandatory = $True)][string]$message,
         [ValidateSet('yellow', 'green', 'red', 'purple', 'gray','random')][string]$color = 'gray',
         [switch]$notify,

@@ -67,7 +67,7 @@ function Extract-ZipArchive ($PathToZip,$destination)
         new-item -itemType Directory $destination;
     }
 
-    $countBefore = (gci $destinationFolder -ea SilentlyContinue | measure-object).Count;
+    $countBefore = (Get-ChildItem $destinationFolder -ea SilentlyContinue | measure-object).Count;
     write-verbose "$countBefore folders in destination directory before extracting zip. "
 
     $destinationFolder = $shellApplication.NameSpace($destination)
@@ -80,7 +80,7 @@ function Extract-ZipArchive ($PathToZip,$destination)
         # extract files
         $destinationFolder.CopyHere($zipPackage.Items(), 20)
 
-        $countAfter = (gci $destinationFolder -ea SilentlyContinue | measure-object).Count;
+        $countAfter = (Get-ChildItem $destinationFolder -ea SilentlyContinue | measure-object).Count;
         write-verbose "$countBefore folders in destination directory after extracting zip. "
 
         if($countAfter -eq $countBefore)
@@ -143,7 +143,7 @@ function Install-GitForWindows
 
 function End-Script($ExitCode)
 {
-    $error | fl -property * | out-file $PsErrors_LogFile
+    $error | Format-List -property * | out-file $PsErrors_LogFile
     exit $exitCode;
 }
 
@@ -157,7 +157,7 @@ function Clone-HipChatPsModule($repoURL, $moduleSaveLocation, $pathToGitExe)
     start-process $pathToGitExe -argumentList "clone", $repoURL -Wait
 
     # verify that direct exists
-    if(gci "Powershell-Hipchat")
+    if(Get-ChildItem "Powershell-Hipchat")
     {
         return $true
     } else {
@@ -227,5 +227,3 @@ if($HipChatModulesAvailable -ge 1)
 } else {
     write-output "Failed to install HipChat PowerShell module."
 }
-
-

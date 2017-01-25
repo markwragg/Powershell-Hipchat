@@ -30,7 +30,7 @@ $CurUsrModulesPath = "$env:UserProfile\Documents\WindowsPowerShell\Modules"
 
 #region Functions
 
-function Create-CurUserPsModulesPath($ModulesPath)
+function New-CurUserPsModulesPath($ModulesPath)
 {
     if(-not $(test-path $ModulesPath))
     {
@@ -47,7 +47,7 @@ function Create-CurUserPsModulesPath($ModulesPath)
     }
 }
 
-function Extract-ZipArchive ($PathToZip,$destination)
+function Export-ZipArchive ($PathToZip,$destination)
 {
     # Extracts the provided zip archive into the destination provided..
 
@@ -100,7 +100,7 @@ function Extract-ZipArchive ($PathToZip,$destination)
 
 }
 
-function Install-GitForWindows
+function Install-Git
 {
     $git_installer_url = "https://github.com/git-for-windows/git/releases/download/v2.10.0.windows.1/MinGit-2.10.0-32-bit.zip"
     $git_zip_save_as = "$env:windir\temp\GitInstaller_archive.zip"
@@ -119,7 +119,7 @@ function Install-GitForWindows
 
     # Extract archive to desired Git directory
 
-    $extractedOk = Extract-ZipArchive -pathtoZip $git_zip_save_as -destination $git_installation_directory;
+    $extractedOk = Export-ZipArchive -pathtoZip $git_zip_save_as -destination $git_installation_directory;
 
     if($extractedOk -ne $true)
     {
@@ -141,13 +141,13 @@ function Install-GitForWindows
 
 }
 
-function End-Script($ExitCode)
+function Stop-Script($ExitCode)
 {
     $error | Format-List -property * | out-file $PsErrors_LogFile
     exit $exitCode;
 }
 
-function Clone-HipChatPsModule($repoURL, $moduleSaveLocation, $pathToGitExe)
+function Copy-HipChatPsModule($repoURL, $moduleSaveLocation, $pathToGitExe)
 {
 
     # Change current working directory to PS module directory
@@ -165,7 +165,7 @@ function Clone-HipChatPsModule($repoURL, $moduleSaveLocation, $pathToGitExe)
     }
 }
 
-function Append-UserPSModulePath($newPsModulePath)
+function Add-UserPSModulePath($newPsModulePath)
 {
     #Save the current value in the $p variable.
     $p = [Environment]::GetEnvironmentVariable("PSModulePath")
@@ -184,15 +184,15 @@ function Append-UserPSModulePath($newPsModulePath)
 #   SCRIPT BEGINS HERE      
 # Create PsModules path under current user profile if it does not exist
 
-$pathExists = Create-CurUserPsModulesPath -ModulesPath $CurUsrModulesPath
+$pathExists = New-CurUserPsModulesPath -ModulesPath $CurUsrModulesPath
 
 if($pathExists -ne $true) { return; }
 
 # Append the newly created PSModule path to the PSModulePath environment variable 
-Append-UserPSModulePath $CurUsrModulesPath;
+Add-UserPSModulePath $CurUsrModulesPath;
 
 # Download / install MinGit for Windows~
-$gitInstalledOk = Install-GitForWindows
+$gitInstalledOk = Install-Git
 
 if($gitInstalledOk -ne $true)
 {
@@ -208,7 +208,7 @@ $paramObj = @{
     pathToGitExe = $PathToGitExe
 }
 
-$clonedOk = Clone-HipChatPsModule @paramObj
+$clonedOk = Copy-HipChatPsModule @paramObj
 
 if($clonedOk -eq $true)
 {
@@ -227,3 +227,4 @@ if($HipChatModulesAvailable -ge 1)
 } else {
     write-output "Failed to install HipChat PowerShell module."
 }
+

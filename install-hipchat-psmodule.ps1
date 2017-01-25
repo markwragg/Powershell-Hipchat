@@ -30,8 +30,11 @@ $CurUsrModulesPath = "$env:UserProfile\Documents\WindowsPowerShell\Modules"
 
 #region Functions
 
-function New-CurUserPsModulesPath($ModulesPath)
+function New-CurUserPsModulesPath
 {
+    [CmdletBinding(SupportsShouldProcess=$true)]
+    Param($ModulesPath)
+
     if(-not $(test-path $ModulesPath))
     {
         write-verbose "PowerShell modules directory does not exist under UserProfile. Attempting to create."
@@ -141,8 +144,11 @@ function Install-Git
 
 }
 
-function Stop-Script($ExitCode)
+function Stop-Script
 {
+    [CmdletBinding(SupportsShouldProcess=$true)]
+    Param($ExitCode)
+
     $error | Format-List -property * | out-file $PsErrors_LogFile
     exit $exitCode;
 }

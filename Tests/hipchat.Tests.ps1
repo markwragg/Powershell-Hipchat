@@ -1,6 +1,8 @@
-﻿$here = Split-Path -Parent $MyInvocation.MyCommand.Path
-$sut = 'hipchat.psd1'
-import-module "$here\$sut" -force
+$moduleName = 'Hipchat'
+$projectRoot = Resolve-Path "$PSScriptRoot\.."
+$moduleRoot = Split-Path (Resolve-Path "$projectRoot\$moduleName\$moduleName.psm1")
+
+Import-Module "$(Resolve-Path "$projectRoot\$moduleName\$moduleName.psm1")"
 
 
 Describe "send-hipchat" {

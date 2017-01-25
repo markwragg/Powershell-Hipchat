@@ -1,0 +1,443 @@
+﻿<Objs Version="1.1.0.1" xmlns="http://schemas.microsoft.com/powershell/2004/04">
+  <Obj RefId="0">
+    <TN RefId="0">
+      <T>Microsoft.PowerShell.Commands.HtmlWebResponseObject</T>
+      <T>Microsoft.PowerShell.Commands.WebResponseObject</T>
+      <T>System.Object</T>
+    </TN>
+    <ToString />
+    <Props>
+      <S N="Content"></S>
+      <Obj N="ParsedHtml" RefId="1">
+        <TN RefId="1">
+          <T>mshtml.HTMLDocumentClass</T>
+          <T>System.__ComObject#{3050f55f-98b5-11cf-bb82-00aa00bdce0b}</T>
+          <T>System.__ComObject</T>
+          <T>System.MarshalByRefObject</T>
+          <T>System.Object</T>
+        </TN>
+        <ToString>mshtml.HTMLDocumentClass</ToString>
+        <Props>
+          <S N="Script">System.__ComObject</S>
+          <Obj N="all" RefId="2">
+            <TN RefId="2">
+              <T>System.__ComObject#{3050f56b-98b5-11cf-bb82-00aa00bdce0b}</T>
+              <T>System.__ComObject</T>
+              <T>System.MarshalByRefObject</T>
+              <T>System.Object</T>
+            </TN>
+            <IE>
+              <S>System.__ComObject</S>
+              <S>System.__ComObject</S>
+              <S>System.__ComObject</S>
+              <S>System.__ComObject</S>
+            </IE>
+          </Obj>
+          <S N="body">System.__ComObject</S>
+          <Nil N="activeElement" />
+          <S N="images">System.__ComObject</S>
+          <S N="applets">System.__ComObject</S>
+          <S N="links">System.__ComObject</S>
+          <S N="forms">System.__ComObject</S>
+          <S N="anchors">System.__ComObject</S>
+          <S N="title"></S>
+          <S N="scripts">System.__ComObject</S>
+          <S N="designMode">Inherit</S>
+          <S N="selection">System.__ComObject</S>
+          <S N="readyState">complete</S>
+          <S N="frames">System.__ComObject</S>
+          <S N="embeds">System.__ComObject</S>
+          <S N="plugins">System.__ComObject</S>
+          <S N="alinkColor">#0000ff</S>
+          <S N="bgColor">#ffffff</S>
+          <S N="fgColor">#000000</S>
+          <S N="linkColor">#0000ff</S>
+          <S N="vlinkColor">#800080</S>
+          <Nil N="referrer" />
+          <S N="location">System.__ComObject</S>
+          <S N="lastModified">03/10/2016 11:34:14</S>
+          <S N="url">about:blank</S>
+          <Nil N="cookie" />
+          <B N="expando">true</B>
+          <S N="charset">unicode</S>
+          <S N="defaultCharset">windows-1252</S>
+          <S N="mimeType">Chrome HTML Document</S>
+          <Nil N="fileUpdatedDate" />
+          <S N="security">This type of document does not have a security certificate.</S>
+          <S N="protocol">Unknown Protocol</S>
+          <S N="nameProp"></S>
+          <S N="onhelp"></S>
+          <S N="onclick"></S>
+          <S N="ondblclick"></S>
+          <S N="onkeyup"></S>
+          <S N="onkeydown"></S>
+          <S N="onkeypress"></S>
+          <S N="onmouseup"></S>
+          <S N="onmousedown"></S>
+          <S N="onmousemove"></S>
+          <S N="onmouseout"></S>
+          <S N="onmouseover"></S>
+          <S N="onreadystatechange"></S>
+          <S N="onafterupdate"></S>
+          <S N="onrowexit"></S>
+          <S N="onrowenter"></S>
+          <S N="ondragstart"></S>
+          <S N="onselectstart"></S>
+          <S N="parentWindow">System.__ComObject</S>
+          <S N="styleSheets">System.__ComObject</S>
+          <S N="onbeforeupdate"></S>
+          <S N="onerrorupdate"></S>
+          <S N="documentElement">System.__ComObject</S>
+          <S N="uniqueID">ms__id3</S>
+          <S N="onrowsdelete"></S>
+          <S N="onrowsinserted"></S>
+          <S N="oncellchange"></S>
+          <S N="ondatasetchanged"></S>
+          <S N="ondataavailable"></S>
+          <S N="ondatasetcomplete"></S>
+          <S N="onpropertychange"></S>
+          <Nil N="dir" />
+          <S N="oncontextmenu"></S>
+          <S N="onstop"></S>
+          <Nil N="parentDocument" />
+          <S N="onbeforeeditfocus"></S>
+          <S N="onselectionchange"></S>
+          <S N="namespaces">System.__ComObject</S>
+          <Nil N="media" />
+          <S N="oncontrolselect"></S>
+          <S N="URLUnencoded">about:blank</S>
+          <S N="onmousewheel"></S>
+          <Nil N="doctype" />
+          <S N="implementation">System.__ComObject</S>
+          <S N="onfocusin"></S>
+          <S N="onfocusout"></S>
+          <S N="onactivate"></S>
+          <S N="ondeactivate"></S>
+          <S N="onbeforeactivate"></S>
+          <S N="onbeforedeactivate"></S>
+          <S N="compatMode">BackCompat</S>
+          <I32 N="nodeType">9</I32>
+          <Nil N="parentNode" />
+          <Obj N="childNodes" RefId="3">
+            <TN RefId="3">
+              <T>System.__ComObject#{3050f577-98b5-11cf-bb82-00aa00bdce0b}</T>
+              <T>System.__ComObject</T>
+              <T>System.MarshalByRefObject</T>
+              <T>System.Object</T>
+            </TN>
+            <IE>
+              <S>System.__ComObject</S>
+            </IE>
+          </Obj>
+          <Nil N="attributes" />
+          <S N="nodeName">#document</S>
+          <S N="nodeValue"></S>
+          <S N="firstChild">System.__ComObject</S>
+          <S N="lastChild">System.__ComObject</S>
+          <Nil N="previousSibling" />
+          <Nil N="nextSibling" />
+          <Nil N="ownerDocument" />
+          <S N="IHTMLDocument2_Script">System.__ComObject</S>
+          <Ref N="IHTMLDocument2_all" RefId="2" />
+          <S N="IHTMLDocument2_body">System.__ComObject</S>
+          <Nil N="IHTMLDocument2_activeElement" />
+          <S N="IHTMLDocument2_images">System.__ComObject</S>
+          <S N="IHTMLDocument2_applets">System.__ComObject</S>
+          <S N="IHTMLDocument2_links">System.__ComObject</S>
+          <S N="IHTMLDocument2_forms">System.__ComObject</S>
+          <S N="IHTMLDocument2_anchors">System.__ComObject</S>
+          <S N="IHTMLDocument2_title"></S>
+          <S N="IHTMLDocument2_scripts">System.__ComObject</S>
+          <S N="IHTMLDocument2_designMode">Inherit</S>
+          <S N="IHTMLDocument2_selection">System.__ComObject</S>
+          <S N="IHTMLDocument2_readyState">complete</S>
+          <S N="IHTMLDocument2_frames">System.__ComObject</S>
+          <S N="IHTMLDocument2_embeds">System.__ComObject</S>
+          <S N="IHTMLDocument2_plugins">System.__ComObject</S>
+          <S N="IHTMLDocument2_alinkColor">#0000ff</S>
+          <S N="IHTMLDocument2_bgColor">#ffffff</S>
+          <S N="IHTMLDocument2_fgColor">#000000</S>
+          <S N="IHTMLDocument2_linkColor">#0000ff</S>
+          <S N="IHTMLDocument2_vlinkColor">#800080</S>
+          <Nil N="IHTMLDocument2_referrer" />
+          <S N="IHTMLDocument2_lastModified">03/10/2016 11:34:14</S>
+          <S N="IHTMLDocument2_url">about:blank</S>
+          <Nil N="IHTMLDocument2_cookie" />
+          <B N="IHTMLDocument2_expando">true</B>
+          <S N="IHTMLDocument2_charset">unicode</S>
+          <S N="IHTMLDocument2_defaultCharset">windows-1252</S>
+          <S N="IHTMLDocument2_mimeType">Chrome HTML Document</S>
+          <Nil N="IHTMLDocument2_fileUpdatedDate" />
+          <S N="IHTMLDocument2_security">This type of document does not have a security certificate.</S>
+          <S N="IHTMLDocument2_protocol">Unknown Protocol</S>
+          <S N="IHTMLDocument2_nameProp"></S>
+          <S N="IHTMLDocument2_onhelp"></S>
+          <S N="IHTMLDocument2_onclick"></S>
+          <S N="IHTMLDocument2_ondblclick"></S>
+          <S N="IHTMLDocument2_onkeyup"></S>
+          <S N="IHTMLDocument2_onkeydown"></S>
+          <S N="IHTMLDocument2_onkeypress"></S>
+          <S N="IHTMLDocument2_onmouseup"></S>
+          <S N="IHTMLDocument2_onmousedown"></S>
+          <S N="IHTMLDocument2_onmousemove"></S>
+          <S N="IHTMLDocument2_onmouseout"></S>
+          <S N="IHTMLDocument2_onmouseover"></S>
+          <S N="IHTMLDocument2_onreadystatechange"></S>
+          <S N="IHTMLDocument2_onafterupdate"></S>
+          <S N="IHTMLDocument2_onrowexit"></S>
+          <S N="IHTMLDocument2_onrowenter"></S>
+          <S N="IHTMLDocument2_ondragstart"></S>
+          <S N="IHTMLDocument2_onselectstart"></S>
+          <S N="IHTMLDocument2_parentWindow">System.__ComObject</S>
+          <S N="IHTMLDocument2_styleSheets">System.__ComObject</S>
+          <S N="IHTMLDocument2_onbeforeupdate"></S>
+          <S N="IHTMLDocument2_onerrorupdate"></S>
+          <S N="IHTMLDocument3_documentElement">System.__ComObject</S>
+          <S N="IHTMLDocument3_uniqueID">ms__id4</S>
+          <S N="IHTMLDocument3_onrowsdelete"></S>
+          <S N="IHTMLDocument3_onrowsinserted"></S>
+          <S N="IHTMLDocument3_oncellchange"></S>
+          <S N="IHTMLDocument3_ondatasetchanged"></S>
+          <S N="IHTMLDocument3_ondataavailable"></S>
+          <S N="IHTMLDocument3_ondatasetcomplete"></S>
+          <S N="IHTMLDocument3_onpropertychange"></S>
+          <Nil N="IHTMLDocument3_dir" />
+          <S N="IHTMLDocument3_oncontextmenu"></S>
+          <S N="IHTMLDocument3_onstop"></S>
+          <Nil N="IHTMLDocument3_parentDocument" />
+          <Ref N="IHTMLDocument3_childNodes" RefId="3" />
+          <S N="IHTMLDocument3_onbeforeeditfocus"></S>
+          <S N="IHTMLDocument4_onselectionchange"></S>
+          <S N="IHTMLDocument4_namespaces">System.__ComObject</S>
+          <Nil N="IHTMLDocument4_media" />
+          <S N="IHTMLDocument4_oncontrolselect"></S>
+          <S N="IHTMLDocument4_URLUnencoded">about:blank</S>
+          <S N="IHTMLDocument5_onmousewheel"></S>
+          <Nil N="IHTMLDocument5_doctype" />
+          <S N="IHTMLDocument5_implementation">System.__ComObject</S>
+          <S N="IHTMLDocument5_onfocusin"></S>
+          <S N="IHTMLDocument5_onfocusout"></S>
+          <S N="IHTMLDocument5_onactivate"></S>
+          <S N="IHTMLDocument5_ondeactivate"></S>
+          <S N="IHTMLDocument5_onbeforeactivate"></S>
+          <S N="IHTMLDocument5_onbeforedeactivate"></S>
+          <S N="IHTMLDocument5_compatMode">BackCompat</S>
+        </Props>
+      </Obj>
+      <Obj N="Forms" RefId="4">
+        <TN RefId="4">
+          <T>Microsoft.PowerShell.Commands.FormObjectCollection</T>
+          <T>System.Collections.ObjectModel.Collection`1[[Microsoft.PowerShell.Commands.FormObject, Microsoft.PowerShell.Commands.Utility, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35]]</T>
+          <T>System.Object</T>
+        </TN>
+        <LST />
+      </Obj>
+      <Obj N="InputFields" RefId="5">
+        <TN RefId="5">
+          <T>Microsoft.PowerShell.Commands.WebCmdletElementCollection</T>
+          <T>System.Collections.ObjectModel.ReadOnlyCollection`1[[System.Management.Automation.PSObject, System.Management.Automation, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35]]</T>
+          <T>System.Object</T>
+        </TN>
+        <LST />
+      </Obj>
+      <Obj N="Links" RefId="6">
+        <TNRef RefId="5" />
+        <LST />
+      </Obj>
+      <Obj N="Images" RefId="7">
+        <TNRef RefId="5" />
+        <LST />
+      </Obj>
+      <Obj N="Scripts" RefId="8">
+        <TNRef RefId="5" />
+        <LST />
+      </Obj>
+      <Obj N="AllElements" RefId="9">
+        <TNRef RefId="5" />
+        <LST>
+          <Obj RefId="10">
+            <TN RefId="6">
+              <T>System.Management.Automation.PSCustomObject</T>
+              <T>System.Object</T>
+            </TN>
+            <MS>
+              <S N="innerHTML">&lt;HEAD&gt;&lt;/HEAD&gt;_x000D__x000A_&lt;BODY&gt;&lt;/BODY&gt;</S>
+              <Nil N="innerText" />
+              <S N="outerHTML">&lt;HTML&gt;&lt;HEAD&gt;&lt;/HEAD&gt;_x000D__x000A_&lt;BODY&gt;&lt;/BODY&gt;&lt;/HTML&gt;</S>
+              <Nil N="outerText" />
+              <S N="tagName">HTML</S>
+            </MS>
+          </Obj>
+          <Obj RefId="11">
+            <TNRef RefId="6" />
+            <MS>
+              <Nil N="innerHTML" />
+              <Nil N="innerText" />
+              <S N="outerHTML">&lt;HEAD&gt;&lt;/HEAD&gt;</S>
+              <Nil N="outerText" />
+              <S N="tagName">HEAD</S>
+            </MS>
+          </Obj>
+          <Obj RefId="12">
+            <TNRef RefId="6" />
+            <MS>
+              <Nil N="innerHTML" />
+              <Nil N="innerText" />
+              <Nil N="outerHTML" />
+              <Nil N="outerText" />
+              <S N="tagName">TITLE</S>
+            </MS>
+          </Obj>
+          <Obj RefId="13">
+            <TNRef RefId="6" />
+            <MS>
+              <Nil N="innerHTML" />
+              <Nil N="innerText" />
+              <S N="outerHTML">_x000D__x000A_&lt;BODY&gt;&lt;/BODY&gt;</S>
+              <Nil N="outerText" />
+              <S N="tagName">BODY</S>
+            </MS>
+          </Obj>
+        </LST>
+      </Obj>
+      <Obj N="BaseResponse" RefId="14">
+        <TN RefId="7">
+          <T>System.Net.HttpWebResponse</T>
+          <T>System.Net.WebResponse</T>
+          <T>System.MarshalByRefObject</T>
+          <T>System.Object</T>
+        </TN>
+        <ToString>System.Net.HttpWebResponse</ToString>
+        <Props>
+          <B N="IsMutuallyAuthenticated">false</B>
+          <Obj N="Cookies" RefId="15">
+            <TN RefId="8">
+              <T>System.Net.CookieCollection</T>
+              <T>System.Object</T>
+            </TN>
+            <IE />
+          </Obj>
+          <Obj N="Headers" RefId="16">
+            <TN RefId="9">
+              <T>System.Net.WebHeaderCollection</T>
+              <T>System.Collections.Specialized.NameValueCollection</T>
+              <T>System.Collections.Specialized.NameObjectCollectionBase</T>
+              <T>System.Object</T>
+            </TN>
+            <IE>
+              <S>Access-Control-Allow-Origin</S>
+              <S>Access-Control-Expose-Headers</S>
+              <S>Strict-Transport-Security</S>
+              <S>X-Content-Type-Options</S>
+              <S>X-Ratelimit-Limit</S>
+              <S>X-Ratelimit-Remaining</S>
+              <S>X-Ratelimit-Reset</S>
+              <S>X-XSS-Protection</S>
+              <S>Connection</S>
+              <S>Content-Type</S>
+              <S>Date</S>
+              <S>Location</S>
+              <S>Server</S>
+            </IE>
+          </Obj>
+          <B N="SupportsHeaders">true</B>
+          <I64 N="ContentLength">-1</I64>
+          <S N="ContentEncoding"></S>
+          <S N="ContentType">text/html</S>
+          <S N="CharacterSet">ISO-8859-1</S>
+          <S N="Server">nginx</S>
+          <DT N="LastModified">2016-03-10T11:34:14.8769033+00:00</DT>
+          <S N="StatusCode">NoContent</S>
+          <S N="StatusDescription">No Content</S>
+          <Version N="ProtocolVersion">1.1</Version>
+          <URI N="ResponseUri">https://api.hipchat.com/v2/room/Test/notification</URI>
+          <S N="Method">POST</S>
+          <B N="IsFromCache">false</B>
+        </Props>
+      </Obj>
+      <I32 N="StatusCode">204</I32>
+      <S N="StatusDescription">No Content</S>
+      <Obj N="Headers" RefId="17">
+        <TN RefId="10">
+          <T>System.Collections.Generic.Dictionary`2[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</T>
+          <T>System.Object</T>
+        </TN>
+        <DCT>
+          <En>
+            <S N="Key">Access-Control-Allow-Origin</S>
+            <S N="Value">*</S>
+          </En>
+          <En>
+            <S N="Key">Access-Control-Expose-Headers</S>
+            <S N="Value">Date, ETag, Link, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-Backoff</S>
+          </En>
+          <En>
+            <S N="Key">Strict-Transport-Security</S>
+            <S N="Value">max-age=31536000</S>
+          </En>
+          <En>
+            <S N="Key">X-Content-Type-Options</S>
+            <S N="Value">nosniff</S>
+          </En>
+          <En>
+            <S N="Key">X-Ratelimit-Limit</S>
+            <S N="Value">100</S>
+          </En>
+          <En>
+            <S N="Key">X-Ratelimit-Remaining</S>
+            <S N="Value">99</S>
+          </En>
+          <En>
+            <S N="Key">X-Ratelimit-Reset</S>
+            <S N="Value">1457609814</S>
+          </En>
+          <En>
+            <S N="Key">X-XSS-Protection</S>
+            <S N="Value">1; mode=block</S>
+          </En>
+          <En>
+            <S N="Key">Connection</S>
+            <S N="Value">keep-alive</S>
+          </En>
+          <En>
+            <S N="Key">Content-Type</S>
+            <S N="Value">text/html</S>
+          </En>
+          <En>
+            <S N="Key">Date</S>
+            <S N="Value">Thu, 10 Mar 2016 11:32:11 GMT</S>
+          </En>
+          <En>
+            <S N="Key">Location</S>
+            <S N="Value">https://api.hipchat.com/v2/room/1904646/history/a83a13ee-d252-4055-a304-8973510b4e52</S>
+          </En>
+          <En>
+            <S N="Key">Server</S>
+            <S N="Value">nginx</S>
+          </En>
+        </DCT>
+      </Obj>
+      <Obj N="RawContentStream" RefId="18">
+        <TN RefId="11">
+          <T>Microsoft.PowerShell.Commands.WebResponseContentMemoryStream</T>
+          <T>System.IO.MemoryStream</T>
+          <T>System.IO.Stream</T>
+          <T>System.MarshalByRefObject</T>
+          <T>System.Object</T>
+        </TN>
+        <ToString>Microsoft.PowerShell.Commands.WebResponseContentMemoryStream</ToString>
+        <Props>
+          <B N="CanRead">true</B>
+          <B N="CanSeek">true</B>
+          <B N="CanTimeout">false</B>
+          <B N="CanWrite">true</B>
+          <I64 N="Length">0</I64>
+          <I32 N="Capacity">10000</I32>
+          <I64 N="Position">0</I64>
+        </Props>
+      </Obj>
+      <I64 N="RawContentLength">0</I64>
+      <S N="RawContent">HTTP/1.1 204 No Content_x000D__x000A_Access-Control-Allow-Origin: *_x000D__x000A_Access-Control-Expose-Headers: Date, ETag, Link, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-Backoff_x000D__x000A_Strict-Transport-Security: max-age=31536000_x000D__x000A_X-Content-Type-Options: nosniff_x000D__x000A_X-Ratelimit-Limit: 100_x000D__x000A_X-Ratelimit-Remaining: 99_x000D__x000A_X-Ratelimit-Reset: 1457609814_x000D__x000A_X-XSS-Protection: 1; mode=block_x000D__x000A_Connection: keep-alive_x000D__x000A_Content-Type: text/html_x000D__x000A_Date: Thu, 10 Mar 2016 11:32:11 GMT_x000D__x000A_Location: https://api.hipchat.com/v2/room/1904646/history/a83a13ee-d252-4055-a304-8973510b4e52_x000D__x000A_Server: nginx_x000D__x000A__x000D__x000A_</S>
+    </Props>
+  </Obj>
+</Objs>

@@ -62,7 +62,7 @@ Function Export-ZipArchive ($PathToZip,$destination)
     If(-not(test-path $destination))
     {
         new-item -itemType Directory $destination;
-    }h
+    }
 
     $countBefore = (Get-ChildItem $destinationFolder -ea SilentlyContinue | measure-object).Count;
     write-verbose "$countBefore folders in destination directory before extracting zip. "

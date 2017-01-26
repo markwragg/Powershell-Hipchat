@@ -33,7 +33,8 @@ $CurUsrModulesPath = "$env:UserProfile\Documents\WindowsPowerShell\Modules"
 function New-CurUserPsModulesPath
 {
     [CmdletBinding(SupportsShouldProcess=$true)]
-    Param($ModulesPath)
+    [OutputType([Boolean])]
+	Param($ModulesPath)
 
     if(-not $(test-path $ModulesPath))
     {

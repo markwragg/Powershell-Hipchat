@@ -10,33 +10,24 @@
                    was written by Mark Wragg. 
 
                    You can find his GitHub project here:
-
-                   https://github.com/markwragg/Powershell-Hipchat.git
-
-
-                    
+                   https://github.com/markwragg/Powershell-Hipchat.git                  
 #>
+[CmdletBinding()]
+Param(
+    $desiredVerbosePref = 'Continue',
+    $VerbosePreference = $desiredVerbosePref,
+    $PathToGitExe = "$env:systemdrive\git\cmd\git.exe",
+    $PSHipChatModuleRepoURL = "https://github.com/markwragg/Powershell-Hipchat.git" ,
+    $CurUsrModulesPath = "$env:UserProfile\Documents\WindowsPowerShell\Modules"
+)
 
-$desiredVerbosePref = 'Continue';
-$VerbosePreference = $desiredVerbosePref;
-
-$PathToGitExe = "$env:systemdrive\git\cmd\git.exe"
-
-# Thanks to Mark, I wont have to write a function to send a message to our HipChat :)
-$PSHipChatModuleRepoURL = "https://github.com/markwragg/Powershell-Hipchat.git" 
-
-# Path to the PsModules directory for storing the downloaded module
-$CurUsrModulesPath = "$env:UserProfile\Documents\WindowsPowerShell\Modules"
-
-#region Functions
-
-function New-CurUserPsModulesPath
+Function New-CurUserPsModulesPath
 {
     [CmdletBinding(SupportsShouldProcess=$true)]
     [OutputType([Boolean])]
 	Param($ModulesPath)
 
-    if(-not $(test-path $ModulesPath))
+    If(-not $(test-path $ModulesPath))
     {
         write-verbose "PowerShell modules directory does not exist under UserProfile. Attempting to create."
         new-item $ModulesPath -itemType Directory -ea SilentlyContinue;
@@ -48,10 +39,12 @@ function New-CurUserPsModulesPath
             write-verbose "Failed to create Modules directory under this user!"
             return $false
         }
+    } else {
+        return $true
     }
 }
 
-function Export-ZipArchive ($PathToZip,$destination)
+Function Export-ZipArchive ($PathToZip,$destination)
 {
     # Extracts the provided zip archive into the destination provided..
 
@@ -66,10 +59,10 @@ function Export-ZipArchive ($PathToZip,$destination)
 
     write-verbose "$PathToZip"
 
-    if(-not(test-path $destination))
+    If(-not(test-path $destination))
     {
         new-item -itemType Directory $destination;
-    }
+    }h
 
     $countBefore = (Get-ChildItem $destinationFolder -ea SilentlyContinue | measure-object).Count;
     write-verbose "$countBefore folders in destination directory before extracting zip. "
@@ -79,7 +72,7 @@ function Export-ZipArchive ($PathToZip,$destination)
     write-verbose "Extracting to $DestinationFolder";
     write-verbose $ZipPackage
 
-    if($zipPackage)
+    If($zipPackage)
     {
         # extract files
         $destinationFolder.CopyHere($zipPackage.Items(), 20)
@@ -104,7 +97,7 @@ function Export-ZipArchive ($PathToZip,$destination)
 
 }
 
-function Install-Git
+Function Install-Git
 {
     $git_installer_url = "https://github.com/git-for-windows/git/releases/download/v2.10.0.windows.1/MinGit-2.10.0-32-bit.zip"
     $git_zip_save_as = "$env:windir\temp\GitInstaller_archive.zip"
@@ -145,7 +138,7 @@ function Install-Git
 
 }
 
-function Stop-Script
+Function Stop-Script
 {
     [CmdletBinding(SupportsShouldProcess=$true)]
     Param($ExitCode)
@@ -154,7 +147,7 @@ function Stop-Script
     exit $exitCode;
 }
 
-function Copy-HipChatPsModule($repoURL, $moduleSaveLocation, $pathToGitExe)
+Function Copy-HipChatPsModule($repoURL, $moduleSaveLocation, $pathToGitExe)
 {
 
     # Change current working directory to PS module directory
@@ -172,7 +165,7 @@ function Copy-HipChatPsModule($repoURL, $moduleSaveLocation, $pathToGitExe)
     }
 }
 
-function Add-UserPSModulePath($newPsModulePath)
+Function Add-UserPSModulePath($newPsModulePath)
 {
     #Save the current value in the $p variable.
     $p = [Environment]::GetEnvironmentVariable("PSModulePath")
@@ -185,15 +178,20 @@ function Add-UserPSModulePath($newPsModulePath)
 
 }
 
-#endregion
 
 ##############################
 #   SCRIPT BEGINS HERE      
 # Create PsModules path under current user profile if it does not exist
 
+Write-Verbose $PSHipChatModuleRepoURL
+Write-Verbose $CurUsrModulesPath
+
 $pathExists = New-CurUserPsModulesPath -ModulesPath $CurUsrModulesPath
 
-if($pathExists -ne $true) { return; }
+if($pathExists -ne $true) { 
+    Write-Verbose "$pathExists does not exist"
+    Return
+}
 
 # Append the newly created PSModule path to the PSModulePath environment variable 
 Add-UserPSModulePath $CurUsrModulesPath;
@@ -234,4 +232,3 @@ if($HipChatModulesAvailable -ge 1)
 } else {
     write-output "Failed to install HipChat PowerShell module."
 }
-

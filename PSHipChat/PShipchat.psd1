@@ -66,7 +66,7 @@ Description = 'Send notifications to an Atlassian Hipchat room. Uses API v2'
 # NestedModules = @()
 
 # Functions to export from this module
-FunctionsToExport = '*'
+FunctionsToExport = 'Send-Hipchat'
 
 # Cmdlets to export from this module
 CmdletsToExport = '*'

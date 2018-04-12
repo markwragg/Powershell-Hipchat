@@ -1,4 +1,4 @@
-# Powershell Commands for HipChat
+# Powershell-HipChat
 
 [![Build status](https://ci.appveyor.com/api/projects/status/rxkq4eo889syrm0d?svg=true)](https://ci.appveyor.com/project/markwragg/powershell-hipchat) ![Test Coverage](https://img.shields.io/badge/coverage-63%25-orange.svg?maxAge=60)
 

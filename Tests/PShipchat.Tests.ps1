@@ -2,6 +2,10 @@ $moduleName = 'PSHipchat'
 $projectRoot = Resolve-Path "$PSScriptRoot\.."
 $moduleRoot = Split-Path (Resolve-Path "$projectRoot\$moduleName\$moduleName.psm1")
 
+If (Get-Module $moduleName) {
+    Remove-Module $moduleName -Force
+}
+
 Import-Module "$moduleRoot\$moduleName.psm1"
 
 Describe "send-hipchat" {

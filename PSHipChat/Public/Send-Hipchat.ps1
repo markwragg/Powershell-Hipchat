@@ -1,10 +1,17 @@
 ﻿function Send-Hipchat {
-<#
-.SYNOPSIS
-    Sends messages to a Hipchat room.
-.EXAMPLE
-    Send-Hipchat -Message 'Hello' -Color 'Green' -Notify -ApiToken myapitoken -Room MyRoom -Retry 5 -RetrySec 10
-#>
+    <#
+        .SYNOPSIS
+            Sends messages to a Hipchat room.
+
+        .DESCRIPTION
+            Use this cmdlet to send a message in to a Hipchat room via the API.
+
+        .EXAMPLE
+            Send-Hipchat -Message 'Hello' -Color 'Green' -Notify -ApiToken myapitoken -Room MyRoom -Retry 5 -RetrySec 10
+
+            Sends the specified message via the Hipchat API with the specified optional parameters. If the message fails to send,
+            retries 5 times with a 10 second interval between each attempt.
+    #>
     [CmdletBinding()]
     [OutputType([Boolean])]
 	Param(

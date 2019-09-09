@@ -1,6 +1,6 @@
 # Powershell-HipChat
 
-[![Build status](https://ci.appveyor.com/api/projects/status/rxkq4eo889syrm0d?svg=true)](https://ci.appveyor.com/project/markwragg/powershell-hipchat) ![Test Coverage](https://img.shields.io/badge/coverage-63%25-orange.svg?maxAge=60)
+[![Build Status](https://dev.azure.com/markwragg/GitHub/_apis/build/status/markwragg.Powershell-Hipchat?branchName=master)](https://dev.azure.com/markwragg/GitHub/_build/latest?definitionId=3&branchName=master) ![Test Coverage](https://img.shields.io/badge/coverage-63%25-orange.svg?maxAge=60)
 
 A module for Powershell with functions for interacting with the team chat tool "Hipchat" by Atlassian. The module utilises Hipchat API v2: https://www.hipchat.com/docs/apiv2.
 

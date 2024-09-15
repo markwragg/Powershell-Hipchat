@@ -1,11 +1,12 @@
 @{
     ExcludeRules = @(
-        'PSUseDeclaredVarsMoreThanAssignments',
+        'PSUseDeclaredVarsMoreThanAssignments'
         'PSAvoidTrailingWhitespace'
+        'PSAvoidOverwritingBuiltInCmdlets'
     )
 
     Severity = @(
-        "Warning",
+        "Warning"
         "Error"
     )
 

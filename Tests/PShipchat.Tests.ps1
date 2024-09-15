@@ -1,60 +1,59 @@
-$moduleName = 'PSHipchat'
-$projectRoot = Resolve-Path "$PSScriptRoot\.."
-$moduleRoot = Split-Path (Resolve-Path "$projectRoot\$moduleName\$moduleName.psm1")
+Describe "Send-Hipchat" {
 
-If (Get-Module $moduleName) {
-    Remove-Module $moduleName -Force
-}
 
-Import-Module "$moduleRoot\$moduleName.psm1"
-
-Describe "send-hipchat" {
-
-    Mock Invoke-WebRequest -ModuleName $moduleName { Import-Clixml "$pwd\Tests\PSHipchat.send-hipchat.invoke-webrequest.xml" }
+    BeforeAll {
+        . $PSScriptRoot/../PSHipChat/Public/Send-Hipchat.ps1
+        . $PSScriptRoot/../PSHipChat/Private/ConvertTo-Json.ps1
     
+        Mock Invoke-WebRequest -ModuleName $moduleName { Import-Clixml "$pwd\Tests\PSHipchat.send-hipchat.invoke-webrequest.xml" }
+    }
+
     It "should return true" {
 
         $params = @{
-            message = "Pester test message"
-            room = "Test"
+            message  = "Pester test message"
+            room     = "Test"
             apitoken = "c6cS2qXSv1zRyUUXpPsu3bebVF43wx8bvPQK5vg6"
         }
 
-        send-hipchat @params | Should Be $true
+        send-hipchat @params | Should -Be $true
     }
 
     It "should reject the colour blue" {
 
         $params = @{
-            message = "Pester test message"
-            room = "Test"
+            message  = "Pester test message"
+            room     = "Test"
             apitoken = "fakefalsetoken"
-            color = "blue"
+            color    = "blue"
         }
 
-        {send-hipchat @params} | Should Throw
+        { send-hipchat @params } | Should -Throw
     }
 }
 
 
-Describe "send-hipchat timeouts" {
+Describe "Send-Hipchat timeouts" {
     
-    Mock Invoke-WebRequest -ModuleName $moduleName {Throw}
+    BeforeAll {
+        . $PSScriptRoot/../PSHipChat/Public/Send-Hipchat.ps1
+        . $PSScriptRoot/../PSHipChat/Private/ConvertTo-Json.ps1
 
+        Mock Invoke-WebRequest -ModuleName $moduleName { Throw }
+    }
+    
     It "should retry 3 additional times" {
 
         $params = @{
-            message = "Pester test message"
-            room = "Test"
-            apitoken = "fakefalsetoken"
-            retry = 3
-            retrysecs = 1
+            message     = "Pester test message"
+            room        = "Test"
+            apitoken    = "fakefalsetoken"
+            retry       = 3
+            retrysecs   = 1
             ErrorAction = "SilentlyContinue"
         }
 
-        send-hipchat @params | Should be $false
-        Assert-MockCalled Invoke-WebRequest -Exactly 4 -ModuleName $moduleName -Scope It
-        
+        send-hipchat @params | Should -Be $false
+        Assert-MockCalled Invoke-WebRequest -Exactly 4 -ModuleName $moduleName -Scope It  
     }
-
 }
